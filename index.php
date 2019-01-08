@@ -9,41 +9,46 @@
 
   	<?php
 
-  		require_once 'connect.php';
+  		require_once 'connectE.php';
   		try {
-  			$conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+  			$bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
   			echo "Connected to $dbname at $host successfully.";
   			//$conn = null;
-  			$sql = 'SELECT prenom, nom, email, mdp FROM users ORDER BY id';
-  			$q = $conn->query($sql);
-  			$q->setFetchMode(PDO::FETCH_ASSOC);
+  			// $sql = 'SELECT prenom, nom, email, mdp FROM users ORDER BY id';
+  			// $q = $conn->query($sql);
+  			// $q->setFetchMode(PDO::FETCH_ASSOC);
 
 
+  			$req = $bdd->prepare('INSERT INTO users (prenom, nom, email, mdp) VALUES (:prenom, :nom, :email, :mdp)');
 
-
-
-
-  			//$req = $bdd->prepare('INSERT INTO users (id, prenom, nom, email, mdp) VALUES (:id, :prenom, :nom, :email, :mdp)');
   			//$randomInscriptions = rand(100, 1000);
-  			//$req->execute(array('id'=>$id,
-  			//					'prenom'=>$prenom,
-  			//					'nom'=>$email,
-  			//					'mdp'=>$mdp
-  			//					));
-  			//echo('<div>Vous êtes inscrit!</div>');
-  			//$req = null;
-  			//$bdd = null;
+
+        $prenom = $_POST['prenom'];
+        $nom = $_POST['nom'];
+        $email = $_POST['email'];
+        $mdp = $_POST['mdp'];
+
+  			$req->execute(array('prenom'=>$prenom,
+  								          'nom'=>$nom,
+                            'email'=>$email,
+  								          'mdp'=>$mdp,
+  								));
+  			echo('Vous êtes inscrit!');
+
+  			$req = null;
+  			$bdd = null;
+
   		}
   		catch (PDOException $pe){
-  			//print " Erreur : " . $pe->getMessage() . "<br/>";
-  			//die();
+  			print " Erreur : " . $pe->getMessage() . "<br/>";
+  			die();
 
-  			die ("Could not connect to the database $dbname : ". $pe->getMessage());
+  			//die ("Could not connect to the database $dbname : ". $pe->getMessage());
   		}
   	?>
 
 
-  	<tbody>
+<!--   	<tbody>
   		<?php
   			while ($row = $q->fetch()) :
   		?>
@@ -54,7 +59,7 @@
 	  		<?php echo htmlspecialchars($row['mdp']); ?><br>
 	  		<?php endwhile; ?>
   		</div>
-  	</tbody>
+  	</tbody> -->
 
 
 
