@@ -8,13 +8,25 @@
   <body>
 
 
-    <?php if (isLoggedIn()): ?>
-            <p>Salut, <?php echo $_SESSION['user_email']; ?>. <a href="index.php">Log Out</a></p>
-        <?php else: ?>
+    <?php 
+    session_start();
+    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
+            echo "Salut,".$_SESSION['us'];
+
+    }
+    else
+    {
+      echo "vous devez vous connecter";
+    }
+
+    ?>
+
+    <!--<a href="index.php">Log Out</a></p>
+        <?php// else: ?>
             <p>Salut. <a href="form-login.php">Login</a></p>
-        <?php endif; ?>
+        <?php //endif; ?>
   
-    <!--<input type="submit"value="Log Out">-->
+    <input type="submit"value="Log Out">-->
 
 
 

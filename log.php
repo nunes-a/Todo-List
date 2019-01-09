@@ -16,9 +16,6 @@
 	//$mdpHash = make_hash($mdplog);
 	//$mdpHash = $mdplog;
 		 
-	//$PDO = db_connect();
-
-	//$stmt = $PDO->prepare("SELECT email, mdp FROM users WHERE email = :emaillog AND mdp = :mdplog");
 	$stmt = $bdd->prepare("SELECT email, mdp FROM users WHERE email = :emaillog AND mdp = :mdplog");
 	$stmt->bindParam(':emaillog', $emaillog);
 	$stmt->bindParam(':mdplog', $mdplog);
@@ -32,15 +29,14 @@
 	    exit;
 	}
 	else{	 
-	echo "// premiere user";
-	$user = $users[0];
-		 
+	//$user = $users[0];
+	$count==1;	 
 	session_start();
 	$_SESSION['logged_in'] = true;
 	//$_SESSION['user_id'] = $user['id']; ??????????
+	//$_SESSION['user_email'] = $emaillog;
+	$_SESSION['us'] = $emaillog;
 
-	$_SESSION['user_email'] = $emaillog;
-	 
 	header ("location: accueil.php");
 	//exit();
 	}
