@@ -3,5 +3,5 @@
 
 	session_start();
 	session_destroy(); 
-	echo "<script type='text/javascript'>alert('Vous êtes déconnecter'); window.location='index.php';</script>";
+	echo "<script type='text/javascript'>alert('Vous êtes déconnecté.'); window.location='index.php';</script>";
 ?>

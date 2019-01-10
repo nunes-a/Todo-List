@@ -7,16 +7,17 @@
       body{font-family: arial;}
       div, form {width: 350px; margin: 0 auto; text-align: center;}
       input{width: 170px; margin: 0 2px; box-sizing: border-box; text-align: center;}
+      a{margin: 0 2px;}
     </style>
   </head>
   <body>
     <div>
       <?php
         require_once 'database.php';
-         
+
         session_start();
         if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
-                echo "Bienvenue, ".$_SESSION['us'].". "; ?> <a href="">Déconnecter</a> <?php
+                echo "Bienvenue, ".$_SESSION['us'].". "; ?> <a href="logout.php">Déconnecter</a> <?php
         }
         else
         {
@@ -35,7 +36,8 @@
         {
         ?>
           <p>
-          <strong><?php echo $resultat['id_list']; ?> - </strong><strong>Project</strong> : <?php echo $resultat['nom_list']; ?><br>
+          <strong><?php echo $resultat['id_list']; ?> - </strong><strong>Project</strong> : <?php echo $resultat['nom_list']; ?>
+          <a href="">Regarder </a><a href=""> Effacer</a><br>
           </p>
         <?php
         }

@@ -35,7 +35,7 @@
         <input name="prio_action" type="radio" value="Moyenne">Moyenne
         <input name="prio_action" type="radio" value="Haute">Haute
       </div>-->
-      <select name="cars" placeholder="prio">
+      <select name="cars" placeholder="priorite">
         <option value="Bas">Bas</option>
         <option value="Moyenne">Moyenne</option>
         <option value="Élevé">Élevé</option>
