@@ -9,7 +9,7 @@
 		 
 	if (empty($emaillog) || empty($mdplog))
 	{
-	    echo "Informe email e senha";
+	    echo "Informer votre email e mot de passe";
 	    exit;
 	}
 		 
@@ -25,7 +25,7 @@
 		 
 	if (count($users) <= 0)
 	{
-	    echo "Email ou senha incorretos";
+	    echo "Email ou mot de passe incorrects";
 	    exit;
 	}
 	else{	 
@@ -37,7 +37,7 @@
 	//$_SESSION['user_email'] = $emaillog;
 	$_SESSION['us'] = $emaillog;
 
-	header ("location: accueil.php");
+	header ("location: action.php");
 	//exit();
 	}
   }

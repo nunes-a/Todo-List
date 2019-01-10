@@ -16,9 +16,9 @@
 
   <form method="post" action="log.php">
     <h4>Log in</h4>
-    <input type="text" name="emaillog" placeholder="Email"><br>
-    <input type="password" name="mdplog" placeholder="Mot de passe"><br>
-    <input type="submit"value="Log in">
+    <input name="emaillog" type="text" placeholder="Email"><br>
+    <input name="mdplog" type="password" placeholder="Mot de passe"><br>
+    <input type="submit" value="Log in">
   </form>
 
     <br>
@@ -26,12 +26,12 @@
 
   <form method="post" action="inscription.php">
     <h4>Inscription</h4>
-   <input class="prenom" name="prenom" type="text" placeholder="Prénom"><br>
-   <input class="nom" name="nom" type="text" placeholder="Nom"><br>
-   <input class="email" name="email" type="email" placeholder="E-mail"><br>
-   <input class="mdp" name="mdp" type="password" placeholder="Mot de passe"><br>
-   <input class="remdp" name="remdp" type="password" placeholder="Confirmer mot de passe"><br>
-	 <input type="submit"value="S'inscrire">
+   <input name="prenom" type="text" placeholder="Prénom"><br>
+   <input name="nom" type="text" placeholder="Nom"><br>
+   <input name="email" type="email" placeholder="E-mail"><br>
+   <input name="mdp" type="password" placeholder="Mot de passe"><br>
+   <input name="remdp" type="password" placeholder="Confirmer mot de passe"><br>
+	 <input type="submit" value="S'inscrire">
   </form>
 
 
