@@ -1,5 +1,5 @@
 <?php
-  require_once 'database.php';
+    require_once 'database.php';
 
     $req = $bdd->prepare('INSERT INTO users (prenom, nom, email, mdp) VALUES (:prenom, :nom, :email, :mdp)');
 
@@ -14,8 +14,5 @@
                         'mdp'=>$mdp,
                         ));
 
-    //header ("Refresh:1; url: index.php");
-    //$message = 'Vous êtes inscrit';
-    //echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
-    echo "<script type='text/javascript'>alert('Vous êtes inscrit'); window.location='accueil.php';</script>";
+    echo "<script type='text/javascript'>alert('Vous êtes inscrit'); window.location='list.php';</script>";
 ?>

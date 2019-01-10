@@ -1,12 +1,15 @@
 <?php
+	require_once 'database.php';
+	//require_once 'connect.php';
 
-  require_once 'connect.php';
-  try {
-    $bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    //$bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
 	$emaillog = isset($_POST['emaillog']) ? $_POST['emaillog'] : '';
 	$mdplog = isset($_POST['mdplog']) ? $_POST['mdplog'] : '';
-		 
+
+	//$utilizateur = $bdd->query("SELECT prenom FROM users");	
+
+
 	if (empty($emaillog) || empty($mdplog))
 	{
 	    echo "Informer votre email e mot de passe";
@@ -37,13 +40,13 @@
 	//$_SESSION['user_email'] = $emaillog;
 	$_SESSION['us'] = $emaillog;
 
-	header ("location: action.php");
+
+
+	//$_SESSION['us'] = $utilizateur;
+
+
+	header ("location: list.php");
 	//exit();
 	}
-  }
-  catch (PDOException $pe){
-    print " Erreur : " . $pe->getMessage() . "<br/>";
-    die();
-  }
 
 ?>

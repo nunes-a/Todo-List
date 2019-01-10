@@ -2,25 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>TODO LIST</title>
-  	<!--<link rel="stylesheet" href="../styles/style.css">-->
+    <title>Todo List - project back-end</title>
     <style>
-      /*.la{width:350px; height: t:100%; background-color: #ccc; margin: 0 auto; padding: 10px;}*/
+      body{font-family: arial;}
       div, form {width: 350px; margin: 0 auto; text-align: center;}
-      /*input{width: 350px;}*/
-    }
+      input{width: 170px; margin: 0 2px; box-sizing: border-box; text-align: center;}
     </style>
   </head>
   <body>
     <div>
-      <?php 
+      <?php
+        require_once 'database.php';
+         
         session_start();
         if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
-                echo "Salut,".$_SESSION['us'];
+                echo "Bienvenue, ".$_SESSION['us'].". "; ?> <a href="">Déconnecter</a> <?php
         }
         else
         {
-          echo "vous devez vous connecter";
+          echo "Vous devez vous connecter";
         }
       ?>
     </div>
@@ -28,7 +28,6 @@
       <?php
         require_once 'database.php';
 
-        // On récupère tout le contenu de la table
         $list = $bdd->query('SELECT id_list, nom_list FROM list');
 
         // On affiche chaque entrée une à une
