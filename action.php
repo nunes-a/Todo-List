@@ -15,13 +15,13 @@
 
   <form method="post" action="ajouteraction.php">
     <h4>Tâche</h4>
-    <input name="nom_action" type="text" placeholder="Nom de tâche"><br>
+    <input name="nomaction" type="text" placeholder="Nom de tâche"><br>
     <input name="type_action" type="text" placeholder="Type de tâche"><br>
-    <div>
+    <!--<div>
       <input name="prio_action" type="radio" value="Bas" checked>Bas
       <input name="prio_action" type="radio" value="Moyenne">Moyenne
       <input name="prio_action" type="radio" value="Haute">Haute<br>
-    </div>
+    </div>-->
     <input name="date_action" type="date" placeholder="Date"><br>
     <input name="heure_action" type="time" placeholder="Heure"><br>
     <input name="lieu_action" type="text" placeholder="Lieu"><br>
